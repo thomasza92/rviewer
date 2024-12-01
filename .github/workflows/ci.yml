@@ -20,16 +20,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - run: cargo build
-      - uses: bencherdev/bencher@main
-      - name: Track base branch benchmarks with Bencher
-        run: |
-          bencher run \
-          --project rviewer \
-          --token '${{ secrets.BENCHER_API_TOKEN }}' \
-          --branch main \
-          --testbed ubuntu-latest \
-          --adapter rust_criterion \
-          --github-actions '${{ secrets.GITHUB_TOKEN }}' \
-          cargo bench
+      - run: cargo test
         env:
           RUST_BACKTRACE: 1
