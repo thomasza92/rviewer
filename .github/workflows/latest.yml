@@ -3,8 +3,9 @@ name: Release
 permissions:
   contents: write
 on:
-  release:
-    types: [ created ]
+  push:
+    tags:
+      - v*
 jobs:
   create-release:
     runs-on: ubuntu-latest
