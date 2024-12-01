@@ -65,6 +65,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: taiki-e/upload-rust-binary-action@v1
         with:
-          bin: quazza-vzn
+          bin: rviewer
           target: ${{ matrix.target }}
           token: ${{ secrets.GITHUB_TOKEN }}
