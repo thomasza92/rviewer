@@ -26,7 +26,7 @@ body = """
 {% for group, commits in commits | group_by(attribute="group") %}
     ### {{ group | upper_first }}
     {%- for commit in commits %}
-        {%- if commit.remote.username != "github-actions[bot]" and not commit.message | matches(pat="^(Merge remote-tracking branch|Merge branch|Merge pull request|Merge .* into .*)") %}
+        {%- if commit.remote.username != "github-actions[bot]" %}
         - {{ commit.message | split(pat="\n") | first | upper_first | trim }}\
             {% if commit.remote.username %} by [@{{ commit.remote.username }}](https://github.com/{{ commit.remote.username }}){%- endif -%}
             {% if commit.remote.pr_number %} in \
@@ -76,9 +76,9 @@ filter_unconventional = false
 # regex for preprocessing the commit messages
 commit_preprocessors = [
     # remove issue numbers from commits
-    { pattern = '\\((\\w+\\s)?#([0-9]+)\\)', replace = "" },
+    { pattern = '\((\w+\s)?#([0-9]+)\)', replace = "" },
     # filter out merge commits
-    { pattern = '^(Merge branch|Merge pull request|Merge .* into .*|Merge remote-tracking branch|merge branch|merge pull request|merge .* into .*|merge remote-tracking branch)', replace = "" },
+    { pattern = '^(Merge branch|Merge pull request|Merge .* into .*|merge branch|merge pull request|merge .* into .*)', replace = "" },
 ]
 # regex for parsing and grouping commits
 commit_parsers = [
