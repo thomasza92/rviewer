@@ -46,7 +46,7 @@ trim = true
 # parse the commits based on https://www.conventionalcommits.org
 conventional_commits = true
 # filter out the commits that are not conventional
-filter_unconventional = true
+filter_unconventional = false
 # regex for parsing and grouping commits
 commit_parsers = [
     { message = "^[a|A]dd", group = "Added" },
@@ -63,7 +63,9 @@ commit_parsers = [
 ]
 # filter out the commits that are not matched by commit parsers
 filter_commits = false
+# regex pattern to exclude commits
+filter_commit_pattern = "^(Merge remote-tracking branch|Merge branch|Merge pull request)"
 # sort the tags topologically
-topo_order = true
+topo_order = false
 # sort the commits inside sections by oldest/newest order
 sort_commits = "newest"
