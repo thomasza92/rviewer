@@ -20,3 +20,4 @@ jobs:
           --testbed ubuntu-latest \
           --adapter rust_criterion \
           --github-actions '${{ secrets.GITHUB_TOKEN }}' \
+          cargo bench
