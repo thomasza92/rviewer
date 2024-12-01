@@ -14,9 +14,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 body = """
 {% if version -%}
     {% if release.previous.version -%}
-        ## [v{{ version }}](https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}/compare/v{{ release.previous.version }}..v{{ version }}) - {{ timestamp | date(format="%Y-%m-%d") }}
+        ## [v{{ version | trim_start_matches(pat="v") }}](https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}/compare/v{{ release.previous.version | trim_start_matches(pat="v") }}..v{{ version | trim_start_matches(pat="v") }}) - {{ timestamp | date(format="%Y-%m-%d") }}
     {% else -%}
-        ## v{{ version }} - {{ timestamp | date(format="%Y-%m-%d") }}
+        ## v{{ version | trim_start_matches(pat="v") }} - {{ timestamp | date(format="%Y-%m-%d") }}
     {% endif %}
 {% else -%}
     ## Unreleased
@@ -63,7 +63,7 @@ commit_parsers = [
 # filter out the commits that are not matched by commit parsers
 filter_commits = false
 # regex pattern to exclude commits
-filter_commit_pattern = "^(Merge remote-tracking branch|Merge branch|Merge pull request)"
+filter_commit_pattern = "^(Merge remote-tracking branch|Merge branch|Merge pull request|^Merge)"
 # sort the tags topologically
 topo_order = false
 # sort the commits inside sections by oldest/newest order
