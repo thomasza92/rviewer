@@ -30,15 +30,13 @@ body = """
 """
 # template for the changelog footer
 footer = """
-{% if contributors | length > 0 %}
 ### Thanks to the following contributors:
-{% for contributor, commits in contributors | group_by(attribute="author.name") %}
-- [{{ contributor }}](https://github.com/{{ commits[0].author.username | default(value="") }})
+{% for author, commits in commits | group_by(attribute="author.name") %}
+- [{{ author }}](https://github.com/{{ commits[0].author.username | default(value="") }})
   {% for commit in commits %}
-    - [{{ commit.hash | slice(start=0, end=7) }}](https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}/commit/{{ commit.hash }})<br>
+    - [{{ commit.hash | slice(start=0, end=7) }}](https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}/commit/{{ commit.hash }}) {{ commit.message | split(pat="\n") | first | upper_first | trim }}<br>
   {% endfor %}
 {% endfor %}
-{% endif %}
 """
 # remove the leading and trailing whitespace from the templates
 trim = true
