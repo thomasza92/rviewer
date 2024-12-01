@@ -4,15 +4,19 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## vv0.0.2 - 2024-12-01
+## vv0.0.1 - 2024-12-01
 
 
 ### Added
 
 - Add criterion, implement tests, expose to lib.rs, test-images
+- Add git-cliff toml file
 
 ### Changed
 
+- Merge remote-tracking branch 'origin/main'
+- Update changelog
+- Fix cliff.toml again..
 - Update cliff.toml & README.md
 - Rollback to consolidated gh actions
 - Rollback to tags
@@ -29,22 +33,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Update ci.yml
 - Create ci.yml
 - Update changelog
-
-### Fixed
-
-- Fix bencher (??) pt 3
-- Fix bencher (??) pt 2
-- Fix bencher (??)
-
-## vv0.0.1 - 2024-12-01
-
-
-### Added
-
-- Add git-cliff toml file
-
-### Changed
-
 - Merge remote-tracking branch 'origin/main'
 - Update rust.yml
 - Update changelog
@@ -61,4 +49,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Create changelog
 - Init commit
 - Initial commit
+
+### Fixed
+
+- Fix bencher (??) pt 3
+- Fix bencher (??) pt 2
+- Fix bencher (??)
 
