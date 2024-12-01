@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## vv0.0.1 - 2024-12-01
+## v0.0.1 - 2024-12-01
 
 
 ### Added
@@ -14,6 +14,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
+- Merge remote-tracking branch 'origin/main'
+- Update changelog
+- Fix cliff.toml again pt2..
 - Merge remote-tracking branch 'origin/main'
 - Update changelog
 - Fix cliff.toml again..
