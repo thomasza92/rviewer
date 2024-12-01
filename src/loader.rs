@@ -19,7 +19,7 @@ pub fn extract_exif_metadata(file_path: &str) -> Option<String> {
         metadata.push_str(&format!(
             "{}: {}\n",
             field.tag,
-            field.display_value().with_unit(&exif).to_string()
+            field.display_value().with_unit(&exif)
         ));
     }
 
@@ -37,7 +37,7 @@ pub fn load_displayimage(ctx: &egui::Context, path: &str) -> Option<(TextureHand
         "image",
         egui::ColorImage::from_rgba_unmultiplied(
             [image.width() as _, image.height() as _],
-            &pixels.as_slice(),
+            pixels.as_slice(),
         ),
         Default::default(),
     );

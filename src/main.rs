@@ -1,11 +1,7 @@
 #![warn(clippy::all, rust_2018_idioms)]
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
-
+pub mod app;
 use crate::app::Rviewer;
-
-mod app;
-mod loader;
-mod types;
 
 fn main() -> Result<(), eframe::Error> {
     egui_logger::builder().init().unwrap();

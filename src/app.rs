@@ -1,9 +1,9 @@
-use crate::loader;
-use crate::loader::{display_image, extract_exif_metadata};
-use crate::types::PanZoom;
 use egui::emath::TSTransform;
 use egui::{Pos2, TextureHandle, Vec2};
 use rfd::FileDialog;
+use rviewer::loader;
+use rviewer::loader::{display_image, extract_exif_metadata};
+use rviewer::types::PanZoom;
 use std::path::PathBuf;
 
 #[derive(serde::Deserialize, serde::Serialize)]
