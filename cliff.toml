@@ -13,9 +13,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 # https://keats.github.io/tera/docs/#introduction
 body = """
 {% if version -%}
-    ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}
+    ## [v{{ version }}](https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}/compare/v{{ release.previous.version }}..v{{ version }}) - {{ timestamp | date(format="%Y-%m-%d") }}
 {% else -%}
-    ## [Unreleased]
+    ## Unreleased
 {% endif -%}
 {% for group, commits in commits | group_by(attribute="group") %}
     ### {{ group | upper_first }}
@@ -26,18 +26,15 @@ body = """
 """
 # template for the changelog footer
 footer = """
-{% for release in releases -%}
-    {% if release.version -%}
-        {% if release.previous.version -%}
-            [{{ release.version | trim_start_matches(pat="v") }}]: \
-                https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}\
-                    /compare/{{ release.previous.version }}..{{ release.version }}
-        {% endif -%}
-    {% else -%}
-        [unreleased]: https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}\
-            /compare/{{ release.previous.version }}..HEAD
-    {% endif -%}
+{% if contributors | length > 0 %}
+### Thanks to the following contributors:
+{% for contributor, commits in contributors | group_by(attribute="author.name") %}
+- [{{ contributor }}](https://github.com/{{ commits[0].author.username | default(value="") }})
+  {% for commit in commits %}
+    - [{{ commit.hash | slice(start=0, end=7) }}](https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}/commit/{{ commit.hash }})<br>
+  {% endfor %}
 {% endfor %}
+{% endif %}
 """
 # remove the leading and trailing whitespace from the templates
 trim = true
