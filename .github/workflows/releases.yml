@@ -3,9 +3,8 @@ name: Releases
 permissions:
   contents: write
 on:
-  push:
-    tags:
-      - v*
+  release:
+    types: [ created ]
 jobs:
   changelog:
     name: Generate changelog
