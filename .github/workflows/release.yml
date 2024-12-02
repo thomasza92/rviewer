@@ -31,26 +31,31 @@ jobs:
 
       - name: Commit
         run: |
-          git checkout main
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          set +e
+          git checkout main
           git add CHANGELOG.md
           git commit -m "Update changelog"
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
 
   create-release:
-    needs: changelog # Ensures 'create-release' waits for 'changelog' to finish
+    needs: changelog
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: taiki-e/create-gh-release-action@v1
+      - name: Checkout updated repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch the full history to ensure the latest commit is included
+          ref: main      # Ensure the job checks out the latest main branch
+
+      - name: Create GitHub release
+        uses: taiki-e/create-gh-release-action@v1
         with:
           changelog: CHANGELOG.md
           token: ${{ secrets.GITHUB_TOKEN }}
 
   upload-assets:
-    needs: create-release # Ensures 'upload-assets' waits for 'create-release' to finish
+    needs: create-release
     strategy:
       matrix:
         include:
@@ -64,7 +69,12 @@ jobs:
             os: macos-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout updated repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch the latest state
+          ref: main      # Checkout the updated main branch
+
       - uses: taiki-e/upload-rust-binary-action@v1
         with:
           bin: rviewer
