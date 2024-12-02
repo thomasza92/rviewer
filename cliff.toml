@@ -29,7 +29,7 @@ body = """
         {%- if commit.remote.username != "github-actions[bot]" %}
             {% if commit.merge_commit == false -%}
             - {{ commit.message | split(pat="\n") | first | upper_first | trim }}\
-                {% if commit.remote.username %} by @{{ commit.remote.username }}{%- endif -%}
+                {% if commit.remote.username %} by [@{{ commit.remote.username }}](https://github.com/{{ commit.remote.username }}){%- endif -%}
                 {% if commit.remote.pr_number %} in \
                 [#{{ commit.remote.pr_number }}]({{ self::remote_url() }}/pull/{{ commit.remote.pr_number }}) \
                 {%- endif -%}
@@ -44,7 +44,7 @@ body = """
 
 {% for contributor in github.contributors | filter(attribute="is_first_time", value=true) %}
     {% if contributor.username != "github-actions[bot]" %}
-      * @{{ contributor.username }} made their first contribution
+      * @{{ contributor.username }} made their first contribution! 🥳
         {%- if contributor.pr_number %} in \
           [#{{ contributor.pr_number }}]({{ self::remote_url() }}/pull/{{ contributor.pr_number }}) \
         {%- endif %}
