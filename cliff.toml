@@ -36,19 +36,22 @@ body = """
 {% endif %}\
 
 {% for group, commits in commits | group_by(attribute="group") %}
-    ### {{ group | upper_first }}
-    {%- for commit in commits %}
-        {%- if commit.remote.username != "github-actions[bot]" %}
-            {% if commit.merge_commit == false -%}
-            - {{ commit.message | split(pat="\n") | first | upper_first | trim }}\
-                {% if commit.remote.username %} by [@{{ commit.remote.username }}](https://github.com/{{ commit.remote.username }}){%- endif -%}
-                {% if commit.remote.pr_number %} in \
-                [#{{ commit.remote.pr_number }}]({{ self::remote_url() }}/pull/{{ commit.remote.pr_number }}) \
-                {%- endif -%}
+    ### {{ group | striptags | trim | upper_first }}
+    {% for commit in commits
+    | filter(attribute="scope")
+    | sort(attribute="scope") %}
+        {{ self::print_commit(commit=commit) }}
+    {%- endfor %}
+    {% for commit in commits -%}
+        {% if commit.merge_commit == false -%}
+            {%- if commit.remote.username != "github-actions[bot]" %}
+                {%- if not commit.scope -%}
+                    {{ self::print_commit(commit=commit) }}
+                {% endif -%}
             {%- endif -%}
         {%- endif -%}
-    {% endfor %}
-{% endfor %}
+    {% endfor -%}
+{% endfor -%}
 
 {%- if github.contributors | filter(attribute="is_first_time", value=true) | length != 0 %}
   ## New Contributors
@@ -81,24 +84,44 @@ commit_preprocessors = [
 ]
 # regex for parsing and grouping commits
 commit_parsers = [
-    { message = "^[a|A]dd", group = "Added ✅" },
-    { message = "^[s|S]upport", group = "Added ✅" },
-    { message = "^[r|R]emove", group = "Removed 🚫" },
-    { message = "^.*: add", group = "Added ✅" },
-    { message = "^.*: support", group = "Added ✅" },
-    { message = "^.*: remove", group = "Removed 🚫" },
-    { message = "^.*: delete", group = "Removed 🚫" },
-    { message = "^test", group = "Fixed ⚙️" },
-    { message = "^fix", group = "Fixed ⚙️" },
-    { message = "^.*: fix", group = "Fixed ⚙️" },
-    { message = "^.*", group = "Changed 🔀" },
-    { field = "github.pr_labels", pattern = "breaking-change", group = "<!-- 0 --> 🏗️ Breaking changes" },
-    { field = "github.pr_labels", pattern = "type/enhancement", group = "<!-- 1 --> 🚀 Features" },
-    { field = "github.pr_labels", pattern = "type/bug", group = "<!-- 2 --> ⚙️ Fixes" },
-    { field = "github.pr_labels", pattern = "type/update", group = "<!-- 3 --> 🧪 Dependencies" },
-    { field = "github.pr_labels", pattern = "type/refactor", group = "<!-- 4 --> 🏭 Refactor" },
-    { field = "github.pr_labels", pattern = "area/documentation", group = "<!-- 5 --> 📝 Documentation" },
-    { field = "github.pr_labels", pattern = ".*", group = "<!-- 6 --> 🤷 Miscellaneous" },
+    { message = "^[a|A]dd", group = "<!-- 0 -->⛰️  Features" },
+    { message = "^.*: add", group = "<!-- 0 -->⛰️  Features" },
+    { message = "^[c|C]reate", group = "<!-- 0 -->⛰️  Features" },
+    { message = "^.*: create", group = "<!-- 0 -->⛰️  Features" },
+    { message = "^[f|F]eat", group = "<!-- 0 -->⛰️  Features" },
+    { message = "^.*: feat", group = "<!-- 0 -->⛰️  Features" },
+    { message = "^[f|F]ix", group = "<!-- 1 -->🐛 Bug Fixes" },
+    { message = "^.*: fix", group = "<!-- 1 -->🐛 Bug Fixes" },
+    { message = "^[r|R]emove", group = "<!-- 2 -->🚜 Removals" },
+    { message = "^.*: remove", group = "<!-- 2 -->🚜 Removals" },
+    { message = "^[d|D]elete", group = "<!-- 2 -->🚜 Removals" },
+    { message = "^.*: delete", group = "<!-- 2 -->🚜 Removals" },
+    { message = "^[r|R]efactor", group = "<!-- 2 -->🚜 Refactored" },
+    { message = "^.*: refactor", group = "<!-- 2 -->🚜 Refactored" },
+    { message = "^refactor\\(clippy\\)", skip = true },
+    { message = "^[d|D]ocs", group = "<!-- 3 -->📚 Documentation" },
+    { message = "^.*: docs", group = "<!-- 3 -->📚 Documentation" },
+    { message = "^[p|P]erformance", group = "<!-- 4 -->⚡ Performance" },
+    { message = "^.*: perf", group = "<!-- 4 -->⚡ Performance" },
+    { message = "^[s|S]tyled", group = "<!-- 5 -->🎨 Styling" },
+    { message = "^.*: styled", group = "<!-- 5 -->🎨 Styling" },
+    { message = "^[t|T]est", group = "<!-- 6 -->🧪 Testing" },
+    { message = "^.*: test", group = "<!-- 6 -->🧪 Testing" },
+    { message = "^chore|^ci", group = "<!-- 7 -->⚙️ Miscellaneous Tasks" },
+    { body = ".*security", group = "<!-- 8 -->🛡️ Security" },
+    { message = "^[r|R]evert", group = "<!-- 9 -->◀️ Reversions" },
+    { message = "^.*: revert", group = "<!-- 9 -->◀️ Reversions" },
+    { message = "^[r|R]ollback*", group = "<!-- 9 -->◀️ Reversions" },
+    { message = "^.*: rollback", group = "<!-- 9 -->◀️ Reversions" },
+    { message = "^[c|C]hange", group = "<!-- 10 -->♻️  Changes" },
+    { message = "^.*: change", group = "<!-- 10 -->♻️  Changes" },
+    { message = "^[u|U]pdate", group = "<!-- 11 -->🛠️  Updates" },
+    { message = "^.*: update", group = "<!-- 11 -->🛠️  Updates" },
+    { message = "^chore\\(release\\): prepare for", skip = true },
+    { message = "^chore\\(deps.*\\)", skip = true },
+    { message = "^chore\\(pr\\)", skip = true },
+    { message = "^chore\\(pull\\)", skip = true },
+    { message = "^chore\\(npm\\).*yarn\\.lock", skip = true },
 ]
 # filter out the commits that are not matched by commit parsers
 filter_commits = true
