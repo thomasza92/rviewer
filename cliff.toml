@@ -18,7 +18,11 @@ body = """
 {%- endmacro -%}
 
 {% if version -%}
-    ## v{{ version | trim_start_matches(pat="v") }} - {{ timestamp | date(format="%m-%d-%Y") }}
+    {% if previous_version -%}
+        ## [v{{ version | trim_start_matches(pat="v") }}]({{ self::remote_url() }}/compare/{{ previous_version }}..{{ version }}) - {{ timestamp | date(format="%m-%d-%Y") }}
+    {% else -%}
+        ## v{{ version | trim_start_matches(pat="v") }} - {{ timestamp | date(format="%m-%d-%Y") }}
+    {% endif -%}
 {% else -%}
     ## [Unreleased]
 {% endif -%}
@@ -77,6 +81,8 @@ filter_unconventional = false
 commit_preprocessors = [
     # remove issue numbers from commits
     { pattern = '\((\w+\s)?#([0-9]+)\)', replace = "" },
+    # filter out merge commits
+    { pattern = '^(Merge branch|Merge pull request|Merge .* into .*|merge branch|merge pull request|merge .* into .*)', replace = "" },
 ]
 # regex for parsing and grouping commits
 commit_parsers = [
