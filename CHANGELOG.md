@@ -5,14 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.5](https://github.com/thomasza92/rviewer/compare/v0.0.4..v0.0.5) - 2024-12-02
+
+### 🐛 Bug Fixes
+
+- Fix release.yml to check for new CHANGELOG - ([c206f24](https://github.com/thomasza92/rviewer/commit/c206f24a9dd44aef2d6d810358068ebbad278a10))
+
 ## [0.0.4](https://github.com/thomasza92/rviewer/compare/v0.0.3..v0.0.4) - 2024-12-02
 
 ### 🐛 Bug Fixes
 
 - Fix cliff.toml - ([db8b3d6](https://github.com/thomasza92/rviewer/commit/db8b3d6e75f2d6d62a1bdd0b196e9c48a897d1c5))
-
-### 🛠️  Updates
-
 
 ## [0.0.3](https://github.com/thomasza92/rviewer/compare/v0.0.2..v0.0.3) - 2024-12-02
 
@@ -26,12 +29,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Change release.yml to latest release - ([59d6485](https://github.com/thomasza92/rviewer/commit/59d64859b3a86cc9c8563b2429b7e84451c37706))
 
-### 🛠️  Updates
-
-- Update cliff.toml... again - ([801a449](https://github.com/thomasza92/rviewer/commit/801a44942d3fe3f642b1caced9aadc9cc54a80bd))
-- Update cliff.toml... again - ([4a927a4](https://github.com/thomasza92/rviewer/commit/4a927a420011bc2ca29d10b147604307f448c495))
-- Update release.yml to wait on changelog before release - ([6909f17](https://github.com/thomasza92/rviewer/commit/6909f17e65f49d4e980c4c4df5827e52d2e9af16))
-
 ## [0.0.2](https://github.com/thomasza92/rviewer/compare/v0.0.1..v0.0.2) - 2024-12-02
 
 ### 🐛 Bug Fixes
@@ -43,9 +40,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix cliff.toml again pt11.. - ([0f05cd5](https://github.com/thomasza92/rviewer/commit/0f05cd5f39e58d7e8a1a44105a614fb7173eb30f))
 - Fix cliff.toml again pt11.. - ([dc49526](https://github.com/thomasza92/rviewer/commit/dc495269681eb29e22f2fb67cbf541edd13c4111))
 - Fix cliff.toml again pt12 - ([8c3e65e](https://github.com/thomasza92/rviewer/commit/8c3e65ede88d6d088755fc8077d04dcd9409e00d))
-
-### 🛠️  Updates
-
 
 ## [0.0.1] - 2024-12-01
 
@@ -74,19 +68,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### ♻️  Changes
 
 - Change releases.yml - ([9441497](https://github.com/thomasza92/rviewer/commit/9441497e4a42b4dca2f6cc75bbf767a16106ac3f))
-
-### 🛠️  Updates
-
-- Update README.md - ([35add26](https://github.com/thomasza92/rviewer/commit/35add26765c9877cc28da114f79a73622371c8a0))
-- Update rust.yml - ([ba703c8](https://github.com/thomasza92/rviewer/commit/ba703c824600d82646dfc9941c5500c0283cc2fa))
-- Update cliff.toml - ([9ba1b97](https://github.com/thomasza92/rviewer/commit/9ba1b97cb1fcbb8b5f25398bbc314f06cc753a60))
-- Update cliff.toml - ([a260b66](https://github.com/thomasza92/rviewer/commit/a260b66616b782435722155036cd89b015255be3))
-- Update rust.yml - ([9abea27](https://github.com/thomasza92/rviewer/commit/9abea273dfcb26464188ffc2ca9523e498e26d67))
-- Update ci.yml - ([e607d4e](https://github.com/thomasza92/rviewer/commit/e607d4edf2a9c420d4812524e1b1494ea5850249))
-- Update cliff.toml, readme, and ci.yml name - ([ec61098](https://github.com/thomasza92/rviewer/commit/ec610988e7ad6b152105f32c1fffb093eea94fae))
-- Update cliff.toml - ([b4707f3](https://github.com/thomasza92/rviewer/commit/b4707f3536c2e43f8a9c52b970e5dc883f62e6ba))
-- Update CI / github action workflows - ([90e3757](https://github.com/thomasza92/rviewer/commit/90e3757c70c3cbe84e147f1ea5369ee9feedb1d3))
-- Update cliff.toml & README.md - ([db2e5a0](https://github.com/thomasza92/rviewer/commit/db2e5a07a6bf951a311fd52b0dbe2f989f94862f))
 
 ### ◀️ Reversions
 
