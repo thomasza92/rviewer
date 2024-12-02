@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## v0.0.2 - 12-02-2024
 
 ### Changed
+- Merge remote-tracking branch 'origin/main' by [@thomasza92](https://github.com/thomasza92)
+
+
+- Fix cliff.toml again pt11.. by [@thomasza92](https://github.com/thomasza92)
+
 - Fix cliff.toml again pt9.. by [@thomasza92](https://github.com/thomasza92)
 
 - Merge remote-tracking branch 'origin/main' by [@thomasza92](https://github.com/thomasza92)
