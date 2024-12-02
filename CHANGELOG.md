@@ -7,83 +7,82 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.3](https://github.com/thomasza92/rviewer/compare/v0.0.2..v0.0.3) - 2024-12-02
 
-### Changed 🔀
-- Fix cliff.toml again pt12 by [@thomasza92](https://github.com/thomasza92)
+### 🐛 Bug Fixes
 
-- Fix cliff.toml again pt13 by [@thomasza92](https://github.com/thomasza92)
-- Fix cliff.toml again pt14 by [@thomasza92](https://github.com/thomasza92)
+- Fix cliff.toml again pt12 - ([6f3fcc2](https://github.com/thomasza92/rviewer/commit/6f3fcc20bf1bb8dbc60cf503b67eca325b84fcca))
+- Fix cliff.toml again pt13 - ([7232e98](https://github.com/thomasza92/rviewer/commit/7232e98c28dd97793e9ad8c57b6e598c3140c4b0))
+- Fix cliff.toml again pt14 - ([17d5a93](https://github.com/thomasza92/rviewer/commit/17d5a9314132a9f99aafa642ba65e4a44f75a430))
 
-- Change release.yml to latest release by [@thomasza92](https://github.com/thomasza92)
+### ♻️  Changes
 
-- Update cliff.toml... again by [@thomasza92](https://github.com/thomasza92)
+- Change release.yml to latest release - ([59d6485](https://github.com/thomasza92/rviewer/commit/59d64859b3a86cc9c8563b2429b7e84451c37706))
+
+### 🛠️  Updates
+
+- Update cliff.toml... again - ([801a449](https://github.com/thomasza92/rviewer/commit/801a44942d3fe3f642b1caced9aadc9cc54a80bd))
+- Update cliff.toml... again - ([4a927a4](https://github.com/thomasza92/rviewer/commit/4a927a420011bc2ca29d10b147604307f448c495))
 
 ## [0.0.2](https://github.com/thomasza92/rviewer/compare/v0.0.1..v0.0.2) - 2024-12-02
 
-### Changed 🔀
-- Fix cliff.toml again pt7.. by [@thomasza92](https://github.com/thomasza92)
+### 🐛 Bug Fixes
 
-- Fix cliff.toml again pt8.. by [@thomasza92](https://github.com/thomasza92)
+- Fix cliff.toml again pt7.. - ([0db8cd2](https://github.com/thomasza92/rviewer/commit/0db8cd29f85b640d28e1f79802934016c4e9d0d2))
+- Fix cliff.toml again pt8.. - ([d03a8fc](https://github.com/thomasza92/rviewer/commit/d03a8fca357abaa2afd91c4c44cafdeff57f9b0e))
+- Fix cliff.toml again pt9.. - ([bb86a02](https://github.com/thomasza92/rviewer/commit/bb86a02b0e9401da1c17f1e78bb1a5c9a3f82f59))
+- Fix cliff.toml again pt11.. - ([8819150](https://github.com/thomasza92/rviewer/commit/881915007d09b19a7b41e03976113b683bb02fbe))
+- Fix cliff.toml again pt11.. - ([0f05cd5](https://github.com/thomasza92/rviewer/commit/0f05cd5f39e58d7e8a1a44105a614fb7173eb30f))
+- Fix cliff.toml again pt11.. - ([dc49526](https://github.com/thomasza92/rviewer/commit/dc495269681eb29e22f2fb67cbf541edd13c4111))
+- Fix cliff.toml again pt12 - ([8c3e65e](https://github.com/thomasza92/rviewer/commit/8c3e65ede88d6d088755fc8077d04dcd9409e00d))
 
-- Fix cliff.toml again pt9.. by [@thomasza92](https://github.com/thomasza92)
-- Fix cliff.toml again pt11.. by [@thomasza92](https://github.com/thomasza92)
-
-- Fix cliff.toml again pt11.. by [@thomasza92](https://github.com/thomasza92)
-
-- Fix cliff.toml again pt11.. by [@thomasza92](https://github.com/thomasza92)
-- Fix cliff.toml again pt12 by [@thomasza92](https://github.com/thomasza92)
+### 🛠️  Updates
 
 
 ## [0.0.1] - 2024-12-01
 
-### Added ✅
-- Add git-cliff toml file by [@thomasza92](https://github.com/thomasza92)
-- Add criterion, implement tests, expose to lib.rs, test-images by [@thomasza92](https://github.com/thomasza92)
+### ⛰️  Features
 
-### Changed 🔀
-- Initial commit by [@thomasza92](https://github.com/thomasza92)
-- Init commit by [@thomasza92](https://github.com/thomasza92)
-- Create changelog by [@thomasza92](https://github.com/thomasza92)
-- Update README.md by [@thomasza92](https://github.com/thomasza92)
-- Create rust.yml by [@thomasza92](https://github.com/thomasza92)
+- Create changelog - ([e974fe7](https://github.com/thomasza92/rviewer/commit/e974fe772fd0c7ce802a68994b9ae39c60577453))
+- Create rust.yml - ([45681e6](https://github.com/thomasza92/rviewer/commit/45681e6fc59b868bd32f1be94e9387c0b8f1dffc))
+- Add git-cliff toml file - ([e3b585e](https://github.com/thomasza92/rviewer/commit/e3b585e416ce8e90cdd60479517e19ee52c5c718))
+- Create ci.yml - ([ba60ca0](https://github.com/thomasza92/rviewer/commit/ba60ca0850dfb1682abd4561d01d5d0949fd3cfd))
+- Create bencher.yml - ([33ff93d](https://github.com/thomasza92/rviewer/commit/33ff93d35327093b86c736d25e2f7de958ae0e00))
+- Add criterion, implement tests, expose to lib.rs, test-images - ([9e03236](https://github.com/thomasza92/rviewer/commit/9e032367c0279de8ed393c05870c6c8f3558a46c))
 
-- Update rust.yml by [@thomasza92](https://github.com/thomasza92)
+### 🐛 Bug Fixes
 
-- Update cliff.toml by [@thomasza92](https://github.com/thomasza92)
+- Fix bencher (??) - ([09fac0e](https://github.com/thomasza92/rviewer/commit/09fac0ec843df1a4821c992822438f48e11c163b))
+- Fix bencher (??) pt 2 - ([26d7a5e](https://github.com/thomasza92/rviewer/commit/26d7a5ec102d47de19b018b20495ffe308e1bb87))
+- Fix bencher (??) pt 3 - ([bb5a319](https://github.com/thomasza92/rviewer/commit/bb5a319b81eccd329bca0b30ce6de02be16e2f9c))
+- Fix cliff.toml again.. - ([4997138](https://github.com/thomasza92/rviewer/commit/4997138abec9bc6f1ae6340abfbdcefc14da3a46))
+- Fix cliff.toml again pt2.. - ([1412d22](https://github.com/thomasza92/rviewer/commit/1412d2240175e7233622f0c81aa9186e074483de))
+- Fix cliff.toml again pt3.. - ([623510c](https://github.com/thomasza92/rviewer/commit/623510c8bcf429beb6e0bde982495b2ba782746e))
+- Fix cliff.toml again pt4.. - ([b13f747](https://github.com/thomasza92/rviewer/commit/b13f747a8bb6b41baf3dfbd13fe5f84cfbfb1f53))
+- Fix cliff.toml again pt5.. - ([c1956aa](https://github.com/thomasza92/rviewer/commit/c1956aad4e61f4691c708c02a22efd2ed1d77837))
+- Fix cliff.toml again pt6.. - ([c27e55f](https://github.com/thomasza92/rviewer/commit/c27e55fe115b1355300be6b1441d86d241e6ebd6))
+- Fix cliff.toml again pt7.. - ([ec19603](https://github.com/thomasza92/rviewer/commit/ec19603f1822774b3d6195b744f517af4b25182c))
 
-- Update cliff.toml by [@thomasza92](https://github.com/thomasza92)
-- Update rust.yml by [@thomasza92](https://github.com/thomasza92)
+### ♻️  Changes
 
-- Create ci.yml by [@thomasza92](https://github.com/thomasza92)
-- Update ci.yml by [@thomasza92](https://github.com/thomasza92)
-- Create bencher.yml by [@thomasza92](https://github.com/thomasza92)
-- Update cliff.toml, readme, and ci.yml name by [@thomasza92](https://github.com/thomasza92)
-- Update cliff.toml by [@thomasza92](https://github.com/thomasza92)
+- Change releases.yml - ([9441497](https://github.com/thomasza92/rviewer/commit/9441497e4a42b4dca2f6cc75bbf767a16106ac3f))
 
-- Update CI / github action workflows by [@thomasza92](https://github.com/thomasza92)
+### 🛠️  Updates
 
-- Rollback some changes by [@thomasza92](https://github.com/thomasza92)
-- Change releases.yml by [@thomasza92](https://github.com/thomasza92)
-- Rollback to tags by [@thomasza92](https://github.com/thomasza92)
-- Rollback to consolidated gh actions by [@thomasza92](https://github.com/thomasza92)
-- Update cliff.toml & README.md by [@thomasza92](https://github.com/thomasza92)
-- Fix cliff.toml again.. by [@thomasza92](https://github.com/thomasza92)
+- Update README.md - ([35add26](https://github.com/thomasza92/rviewer/commit/35add26765c9877cc28da114f79a73622371c8a0))
+- Update rust.yml - ([ba703c8](https://github.com/thomasza92/rviewer/commit/ba703c824600d82646dfc9941c5500c0283cc2fa))
+- Update cliff.toml - ([9ba1b97](https://github.com/thomasza92/rviewer/commit/9ba1b97cb1fcbb8b5f25398bbc314f06cc753a60))
+- Update cliff.toml - ([a260b66](https://github.com/thomasza92/rviewer/commit/a260b66616b782435722155036cd89b015255be3))
+- Update rust.yml - ([9abea27](https://github.com/thomasza92/rviewer/commit/9abea273dfcb26464188ffc2ca9523e498e26d67))
+- Update ci.yml - ([e607d4e](https://github.com/thomasza92/rviewer/commit/e607d4edf2a9c420d4812524e1b1494ea5850249))
+- Update cliff.toml, readme, and ci.yml name - ([ec61098](https://github.com/thomasza92/rviewer/commit/ec610988e7ad6b152105f32c1fffb093eea94fae))
+- Update cliff.toml - ([b4707f3](https://github.com/thomasza92/rviewer/commit/b4707f3536c2e43f8a9c52b970e5dc883f62e6ba))
+- Update CI / github action workflows - ([90e3757](https://github.com/thomasza92/rviewer/commit/90e3757c70c3cbe84e147f1ea5369ee9feedb1d3))
+- Update cliff.toml & README.md - ([db2e5a0](https://github.com/thomasza92/rviewer/commit/db2e5a07a6bf951a311fd52b0dbe2f989f94862f))
 
-- Fix cliff.toml again pt2.. by [@thomasza92](https://github.com/thomasza92)
+### ◀️ Reversions
 
-- Fix cliff.toml again pt3.. by [@thomasza92](https://github.com/thomasza92)
-- Fix cliff.toml again pt4.. by [@thomasza92](https://github.com/thomasza92)
-
-- Fix cliff.toml again pt5.. by [@thomasza92](https://github.com/thomasza92)
-
-- Fix cliff.toml again pt6.. by [@thomasza92](https://github.com/thomasza92)
-
-- Fix cliff.toml again pt7.. by [@thomasza92](https://github.com/thomasza92)
-
-
-### Fixed ⚙️
-- Fix bencher (??) by [@thomasza92](https://github.com/thomasza92)
-- Fix bencher (??) pt 2 by [@thomasza92](https://github.com/thomasza92)
-- Fix bencher (??) pt 3 by [@thomasza92](https://github.com/thomasza92)
+- Rollback some changes - ([e7e627b](https://github.com/thomasza92/rviewer/commit/e7e627bd7988119c93f67da1d871adf97ed94d30))
+- Rollback to tags - ([fec26cf](https://github.com/thomasza92/rviewer/commit/fec26cf9a60a4cfb8febc465f834aa955f4d9082))
+- Rollback to consolidated gh actions - ([5134428](https://github.com/thomasza92/rviewer/commit/51344286076b5ad49b58b539ffa46e838d9e0594))
 
 ## New Contributors
 
