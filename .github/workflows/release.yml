@@ -1,4 +1,4 @@
-name: Releases
+name: Latest Release
 
 permissions:
   contents: write
