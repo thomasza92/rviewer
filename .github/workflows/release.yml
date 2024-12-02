@@ -38,7 +38,9 @@ jobs:
           git add CHANGELOG.md
           git commit -m "Update changelog"
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
+
   create-release:
+    needs: changelog # Ensures 'create-release' waits for 'changelog' to finish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -48,7 +50,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   upload-assets:
-    needs: create-release
+    needs: create-release # Ensures 'upload-assets' waits for 'create-release' to finish
     strategy:
       matrix:
         include:
