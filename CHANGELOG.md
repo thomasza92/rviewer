@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Update cliff.toml... again - ([801a449](https://github.com/thomasza92/rviewer/commit/801a44942d3fe3f642b1caced9aadc9cc54a80bd))
 - Update cliff.toml... again - ([4a927a4](https://github.com/thomasza92/rviewer/commit/4a927a420011bc2ca29d10b147604307f448c495))
+- Update release.yml to wait on changelog before release - ([6909f17](https://github.com/thomasza92/rviewer/commit/6909f17e65f49d4e980c4c4df5827e52d2e9af16))
 
 ## [0.0.2](https://github.com/thomasza92/rviewer/compare/v0.0.1..v0.0.2) - 2024-12-02
 
