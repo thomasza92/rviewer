@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## v0.0.3 - 12-02-2024
+## [0.0.3](https://github.com/thomasza92/rviewer/compare/v0.0.2..v0.0.3) - 2024-12-02
 
 ### Changed 🔀
 - Fix cliff.toml again pt12 by [@thomasza92](https://github.com/thomasza92)
@@ -13,8 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix cliff.toml again pt13 by [@thomasza92](https://github.com/thomasza92)
 - Fix cliff.toml again pt14 by [@thomasza92](https://github.com/thomasza92)
 
+- Change release.yml to latest release by [@thomasza92](https://github.com/thomasza92)
 
-## v0.0.2 - 12-02-2024
+- Update cliff.toml... again by [@thomasza92](https://github.com/thomasza92)
+
+## [0.0.2](https://github.com/thomasza92/rviewer/compare/v0.0.1..v0.0.2) - 2024-12-02
 
 ### Changed 🔀
 - Fix cliff.toml again pt7.. by [@thomasza92](https://github.com/thomasza92)
@@ -30,7 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix cliff.toml again pt12 by [@thomasza92](https://github.com/thomasza92)
 
 
-## v0.0.1 - 12-01-2024
+## [0.0.1] - 2024-12-01
 
 ### Added ✅
 - Add git-cliff toml file by [@thomasza92](https://github.com/thomasza92)
@@ -84,7 +87,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## New Contributors
 
-* @thomasza92 made their first contribution! 🥳
+* [@thomasza92](https://github.com/thomasza92) made their first contribution! 🥳
 
 
 
