@@ -18,7 +18,7 @@ body = """
 {%- endmacro -%}
 
 {% if version -%}
-    ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}
+    ## v{{ version | trim_start_matches(pat="v") }} - {{ timestamp | date(format="%m-%d-%Y") }}
 {% else -%}
     ## [Unreleased]
 {% endif -%}
