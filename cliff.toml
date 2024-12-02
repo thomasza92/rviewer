@@ -41,12 +41,10 @@ body = """
 {%- endif -%}
 
 {% for contributor in github.contributors | filter(attribute="is_first_time", value=true) %}
-{%- if commit.remote.username != "github-actions[bot]" %}
   * [@{{ contributor.username }}](https://github.com/{{ contributor.username }}) made their first contribution
     {%- if contributor.pr_number %} in \
       [#{{ contributor.pr_number }}]({{ self::remote_url() }}/pull/{{ contributor.pr_number }}) \
     {%- endif %}
-{%- endif %}
 {%- endfor %}\n
 """
 # template for the changelog footer
