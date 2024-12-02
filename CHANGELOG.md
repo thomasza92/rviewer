@@ -2,12 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
 ## v0.0.3 - 12-02-2024
 
 ### Changed 🔀
 - Fix cliff.toml again pt12 by [@thomasza92](https://github.com/thomasza92)
 
 - Fix cliff.toml again pt13 by [@thomasza92](https://github.com/thomasza92)
+- Fix cliff.toml again pt14 by [@thomasza92](https://github.com/thomasza92)
+
 
 ## v0.0.2 - 12-02-2024
 
